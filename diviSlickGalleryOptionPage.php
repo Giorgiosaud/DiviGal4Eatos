@@ -137,4 +137,4 @@ class DiviSlickGalleryPage
 }
 
 if( is_admin() )
-    $my_settings_page = new MySettingsPage();
+    $my_settings_page = new DiviSlickGalleryPage();
