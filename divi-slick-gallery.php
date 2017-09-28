@@ -4,10 +4,10 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 	
 	function init() {
 				$this->name            = esc_html__( 'Slick Gallery', 'divi-slick' );
-		$this->slug            = 'et_pb_slick_carousel_1';
+		$this->slug            = 'et_pb_slick_carousel_2';
 		$this->fb_support      = true;
 		$this->fullwidth       = true;
-		$this->child_slug      = 'et_pb_slick_gallery_item_1';
+		$this->child_slug      = 'et_pb_slick_gallery_item_2';
 		$this->child_item_text = esc_html__( 'Slick Item', 'divi-slick' );
 
 		$this->whitelisted_fields = array(
