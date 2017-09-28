@@ -50,7 +50,7 @@ class ET_Divi_Slick_Gallery_Item extends ET_Builder_Module {
 					'image_video'  => esc_html__( 'Image & Video', 'et_builder' ),
 					'player_pause' => esc_html__( 'Player Pause', 'et_builder' ),
 					'background'   => esc_html__( 'Background', 'et_builder' ),
-					'admin_label'  => esc_html__( 'Admin Label', 'et_builder' ),
+					'admin_label'  => esc_html__( 'Admin Label2', 'et_builder' ),
 				),
 			),
 			'advanced' => array(
