@@ -78,6 +78,6 @@ function save_our_link_to_attachment_meta(){
      }
 }
 
-// echo 'test';
+echo 'test';
 add_action('edit_attachment', 'save_our_link_to_attachment_meta');
 ?>
