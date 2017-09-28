@@ -10,7 +10,7 @@ Version: 3.2
 Author: Automattic
 Author URI: https://automattic.com/wordpress-plugins/
 License: GPLv2 or later
-Text Domain: akismet
+Text Domain: divi-slick
 */
 
 /*
@@ -37,6 +37,7 @@ Copyright 2005-2015 Automattic, Inc.
 include_once 'diviSlickGalleryOptionPage.php';
 function DiviLoadGallery(){
  include("divi-slick-gallery.php");
+ include("divi-slick-gallery-item.php");
 }
 add_action('et_builder_framework_loaded','DiviLoadGallery');
 add_action( 'wp_enqueue_scripts', 'divigalleryslickscripts' );
