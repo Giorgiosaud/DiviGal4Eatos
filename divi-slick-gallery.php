@@ -501,8 +501,8 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module{
 			),
 		);
 
-		return $fields;
-	}
+return $fields;
+}
 
 	/**
 	 * Get attachment data for gallery module
@@ -560,6 +560,8 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module{
 	}
 
 	function shortcode_callback( $atts, $content = null, $function_name ) {
+		wp_enqueue_style('slicktheme');
+		wp_enqueue_script('slick');
 		$module_id              = $this->shortcode_atts['module_id'];
 		$module_class           = $this->shortcode_atts['module_class'];
 		$gallery_ids            = $this->shortcode_atts['gallery_ids'];
@@ -625,10 +627,10 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module{
 				'selector'    => '%%order_class%% .et_overlay',
 				'declaration' => sprintf(
 					'background-color: %1$s;
-			border-color: %1$s;',
-esc_html( $hover_overlay_color )
-),
-) );
+					border-color: %1$s;',
+					esc_html( $hover_overlay_color )
+				),
+			) );
 		}
 
 		// Get gallery item data
@@ -663,47 +665,47 @@ esc_html( $hover_overlay_color )
 		foreach ( $attachments as $id => $attachment ) {
 
 			$data_icon = '' !== $hover_icon
-				? sprintf(
-					' data-icon="%1$s"',
-					esc_attr( et_pb_process_font_icon( $hover_icon ) )
-				)
-				: '';
+			? sprintf(
+				' data-icon="%1$s"',
+				esc_attr( et_pb_process_font_icon( $hover_icon ) )
+			)
+			: '';
 
-$link=$attachment->urlTo;
+			$link=$attachment->urlTo;
 			$image_output = sprintf(
 				'<a href="%3$s" target="_blank"><img src="%1$s" alt="%2$s" /></a>',
-	esc_url( $attachment->image_src_thumb[0] ),
-	esc_attr( $attachment->post_title ),
-	$link
-);
+				esc_url( $attachment->image_src_thumb[0] ),
+				esc_attr( $attachment->post_title ),
+				$link
+			);
 
-$orientation = ( $attachment->image_src_thumb[2] > $attachment->image_src_thumb[1] ) ? 'portrait' : 'landscape';
+			$orientation = ( $attachment->image_src_thumb[2] > $attachment->image_src_thumb[1] ) ? 'portrait' : 'landscape';
 
-$output .= sprintf(
-	'<div class="et_pb_gallery_item_slick%2$s%1$s">',
-	esc_attr( $background_class ),
-	( 'on' !== $fullwidth ? ' et_pb_grid_item_slick' : '' )
-);
-$output .= "
-<div class='et_pb_gallery_image {$orientation}'>
-	$image_output
-</div>";
+			$output .= sprintf(
+				'<div class="et_pb_gallery_item_slick%2$s%1$s">',
+				esc_attr( $background_class ),
+				( 'on' !== $fullwidth ? ' et_pb_grid_item_slick' : '' )
+			);
+			$output .= "
+			<div class='et_pb_gallery_image {$orientation}'>
+			$image_output
+			</div>";
 
-if ( 'on' !== $fullwidth && 'on' === $show_title_and_caption ) {
-	if ( trim($attachment->post_title) ) {
-		$output .= "
-		<h3 class='et_pb_gallery_title'>
-			" . wptexturize($attachment->post_title) . "
-		</h3>";
-	}
-	if ( trim($attachment->post_excerpt) ) {
-		$output .= "
-		<p class='et_pb_gallery_caption'>
-			" . wptexturize($attachment->post_excerpt) . "
-		</p>";
-	}
-}
-$output .= "</div>";
+			if ( 'on' !== $fullwidth && 'on' === $show_title_and_caption ) {
+				if ( trim($attachment->post_title) ) {
+					$output .= "
+					<h3 class='et_pb_gallery_title'>
+					" . wptexturize($attachment->post_title) . "
+					</h3>";
+				}
+				if ( trim($attachment->post_excerpt) ) {
+					$output .= "
+					<p class='et_pb_gallery_caption'>
+					" . wptexturize($attachment->post_excerpt) . "
+					</p>";
+				}
+			}
+			$output .= "</div>";
 		}
 
 		$output .= "</div><!-- .et_pb_gallery_items -->";
@@ -789,6 +791,6 @@ $output .= "</div>";
 			esc_attr($slidesToScrollInSM)
 		);
 		return $output;
-		}
-		}
-		new ET_Divi_Slick_Gallery();
+	}
+}
+new ET_Divi_Slick_Gallery();

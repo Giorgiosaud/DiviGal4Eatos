@@ -37,9 +37,6 @@ Copyright 2005-2015 Automattic, Inc.
 include_once 'diviSlickGalleryOptionPage.php';
 function DiviLoadGallery(){
  include("divi-slick-gallery.php");
- 
-
-
 }
 add_action('et_builder_framework_loaded','DiviLoadGallery');
 add_action( 'wp_enqueue_scripts', 'divigalleryslickscripts' );
@@ -47,8 +44,7 @@ function divigalleryslickscripts(){
 	wp_register_style('slick',plugins_url( '/Slick/slick.css', __FILE__ ));
 	wp_register_style('slicktheme',plugins_url( '/Slick/slick-theme.css', __FILE__ ),array('slick'));
 	wp_register_script('slick',plugins_url( '/Slick/slick.min.js', __FILE__ ),array('jquery'));
-	wp_enqueue_style('slicktheme');
-	wp_enqueue_script('slick');
+	
 }
 
 
@@ -78,6 +74,5 @@ function save_our_link_to_attachment_meta(){
      }
 }
 
-echo 'test3';
 add_action('edit_attachment', 'save_our_link_to_attachment_meta');
 ?>
