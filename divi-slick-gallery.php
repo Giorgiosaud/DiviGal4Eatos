@@ -4,10 +4,10 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 	
 	function init() {
 				$this->name            = esc_html__( 'Slick Gallery', 'divi-slick' );
-		$this->slug            = 'et_pb_slick_carousel_2';
+		$this->slug            = 'et_pb_slick_carousel_3';
 		$this->fb_support      = true;
 		$this->fullwidth       = true;
-		$this->child_slug      = 'et_pb_slick_gallery_item_2';
+		$this->child_slug      = 'et_pb_slick_gallery_item_3';
 		$this->child_item_text = esc_html__( 'Slick Item', 'divi-slick' );
 
 		$this->whitelisted_fields = array(
@@ -364,7 +364,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 			) );
 		}
 
-		$fullwidth = 'et_pb_slick_carousel_2' === $function_name ? 'on' : 'off';
+		$fullwidth = 'et_pb_slick_carousel_3' === $function_name ? 'on' : 'off';
 
 		$class  = '';
 		$class .= 'off' === $fullwidth ? ' et_pb_slider_fullwidth_off' : '';
