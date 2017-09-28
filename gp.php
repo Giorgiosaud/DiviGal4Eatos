@@ -1,6 +1,8 @@
 <?php
 $path = dirname(__FILE__) . '/../../..';
 //load wp
+define('SHORTINIT', true);  // load minimal WordPress
+
 if (file_exists($path . '/wp-load.php')) {
 	
 	include_once $path . '/wp-load.php';
