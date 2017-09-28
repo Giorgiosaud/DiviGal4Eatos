@@ -37,7 +37,7 @@ include_once 'diviSlickGalleryOptionPage.php';
 function DiviLoadGallery(){
  include("divi-slick-gallery.php");
  
- include 'gp.php';
+
 
 }
 add_action('et_builder_framework_loaded','DiviLoadGallery');
