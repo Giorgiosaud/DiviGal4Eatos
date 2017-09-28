@@ -70,6 +70,7 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 
 	case 'push':
 	echo 'pull';
+	exec('cd '.dirname(__FILE__));
 	exec('git pull');
 	break;
 
