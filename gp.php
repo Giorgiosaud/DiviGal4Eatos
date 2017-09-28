@@ -11,6 +11,7 @@ if (file_exists($path . '/wp-load.php')) {
 }
 $options=get_option('divi_slick_gallery');
 $hookSecret =$options['pass'];
+die(var_dump($hookSecret));
 set_error_handler(function($severity, $message, $file, $line) {
 		throw new \ErrorException($message, 0, $severity, $file, $line);
 		});
