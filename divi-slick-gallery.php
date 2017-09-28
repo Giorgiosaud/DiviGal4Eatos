@@ -364,7 +364,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 			) );
 		}
 
-		$fullwidth = 'et_pb_fullwidth_slider' === $function_name ? 'on' : 'off';
+		$fullwidth = 'et_pb_slick_carousel_2' === $function_name ? 'on' : 'off';
 
 		$class  = '';
 		$class .= 'off' === $fullwidth ? ' et_pb_slider_fullwidth_off' : '';
