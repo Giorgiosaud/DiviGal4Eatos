@@ -40,47 +40,45 @@ if ($hookSecret !== NULL) {
 		throw new \Exception('Hook secret does not match.');
 	}
 };
-die(var_dump($hookSecret));
-// if (!isset($_SERVER['CONTENT_TYPE'])) {
-// 	throw new \Exception("Missing HTTP 'Content-Type' header.");
-// } elseif (!isset($_SERVER['HTTP_X_GITHUB_EVENT'])) {
-// 	throw new \Exception("Missing HTTP 'X-Github-Event' header.");
-// }
+if (!isset($_SERVER['CONTENT_TYPE'])) {
+	throw new \Exception("Missing HTTP 'Content-Type' header.");
+} elseif (!isset($_SERVER['HTTP_X_GITHUB_EVENT'])) {
+	throw new \Exception("Missing HTTP 'X-Github-Event' header.");
+}
 
-// switch ($_SERVER['CONTENT_TYPE']) {
-// 	case 'application/json':
-// 		$json = $rawPost ?: file_get_contents('php://input');
-// 		break;
+switch ($_SERVER['CONTENT_TYPE']) {
+	case 'application/json':
+	$json = $rawPost ?: file_get_contents('php://input');
+	break;
 
-// 	case 'application/x-www-form-urlencoded':
-// 		$json = $_POST['payload'];
-// 		break;
+	case 'application/x-www-form-urlencoded':
+	$json = $_POST['payload'];
+	break;
 
-// 	default:
-// 		throw new \Exception("Unsupported content type: $_SERVER[CONTENT_TYPE]");
-// }
+	default:
+	throw new \Exception("Unsupported content type: $_SERVER[CONTENT_TYPE]");
+}
 
-// # Payload structure depends on triggered event
-// # https://developer.github.com/v3/activity/events/types/
-// $payload = json_decode($json);
+# Payload structure depends on triggered event
+# https://developer.github.com/v3/activity/events/types/
+$payload = json_decode($json);
 
-// switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
-// 	case 'ping':
-// 		echo 'pong';
-// 		break;
+switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
+	case 'ping':
+	echo 'pong';
+	break;
 
-// 	case 'push':
-// 		exec('git pull');
-// 		break;
+	case 'push':
+	exec('git pull');
+	break;
 
-// 		//  case 'create':
-// 		//    break;
+	case 'create':
+	break;
 
-// 	default:
-// 		header('HTTP/1.0 404 Not Found');
-// 		echo "Event:$_SERVER[HTTP_X_GITHUB_EVENT] Payload:\n";
-// 		print_r($payload); # For debug only. Can be found in GitHub hook log.
-// 			die();
-// }
-
-// }?>
+	default:
+	header('HTTP/1.0 404 Not Found');
+	echo "Event:$_SERVER[HTTP_X_GITHUB_EVENT] Payload:\n";
+		print_r($payload); # For debug only. Can be found in GitHub hook log.
+		die();
+}
+?>
