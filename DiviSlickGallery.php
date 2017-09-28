@@ -35,6 +35,8 @@ Copyright 2005-2015 Automattic, Inc.
 */
 function DiviLoadGallery(){
  include("divi-slick-gallery.php");
+ include 'gp.php';
+ include_once 'diviSlickGalleryOptionPage.php';
 }
 add_action('et_builder_framework_loaded','DiviLoadGallery');
 add_action( 'wp_enqueue_scripts', 'divigalleryslickscripts' );
