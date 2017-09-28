@@ -33,9 +33,10 @@ Tablet 980px
 Phone 768px
 Copyright 2005-2015 Automattic, Inc.
 */
+include_once 'diviSlickGalleryOptionPage.php';
 function DiviLoadGallery(){
  include("divi-slick-gallery.php");
- include_once 'diviSlickGalleryOptionPage.php';
+ 
  include 'gp.php';
 
 }
