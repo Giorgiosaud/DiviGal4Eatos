@@ -6,8 +6,7 @@ if (file_exists($path . '/wp-load.php')) {
 } elseif (file_exists($path . '/../wp-load.php')) {
 	include_once $path . '/../wp-load.php';
 }
-global $options;
-die(var_dump($options));
+die(var_dump(get_option('divi_slick_gallery')));
 foreach ($options as $value) {
     if (get_option($value['id']) === FALSE) {
         $$value['id'] = $value['std'];
