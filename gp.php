@@ -7,6 +7,7 @@ if (file_exists($path . '/wp-load.php')) {
 	include_once $path . '/../wp-load.php';
 }
 global $options;
+die(var_dump($options));
 foreach ($options as $value) {
     if (get_option($value['id']) === FALSE) {
         $$value['id'] = $value['std'];
