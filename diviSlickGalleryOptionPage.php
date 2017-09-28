@@ -23,7 +23,7 @@ class DiviSlickGalleryPage
         // This page will be under "Settings"
         add_options_page(
             'Settings Admin', 
-            'My Settings', 
+            'Slick Gallery', 
             'manage_options', 
             'my-setting-admin', 
             array( $this, 'create_admin_page' )
