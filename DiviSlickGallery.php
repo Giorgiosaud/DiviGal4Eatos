@@ -47,33 +47,4 @@ function divigalleryslickscripts(){
 	wp_register_script('slick',plugins_url( '/Slick/slick.min.js', __FILE__ ),array('jquery'));
 	
 }
-
-
-function add_link_to_attachment_meta(){
-   add_meta_box( 'link-to-attachment-meta-box', 
-                 'Link To', 
-                 'add_link_to_attachment_meta_callback',
-                 'attachment',
-                 'normal',
-                 'low');
-}
-add_action( 'admin_init', 'add_link_to_attachment_meta' );
-function add_link_to_attachment_meta_callback(){
-     global $post; 
-     $value = get_post_meta($post->ID, 'link_to', 1);
-?>
-<label class="setting" data-setting="alt">
-	<span class="name">Link to:</span>
-	<input type="text" name="link_to" value="<?=$value?>">
-</label>
-     <?php
-}
-function save_our_link_to_attachment_meta(){
-     global $post; 
-     if( isset( $_POST['link_to'] ) ){
-           update_post_meta( $post->ID, 'link_to', $_POST['link_to'] );
-     }
-}
-
-add_action('edit_attachment', 'save_our_link_to_attachment_meta');
 ?>
