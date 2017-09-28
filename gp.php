@@ -69,10 +69,12 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 	break;
 
 	case 'push':
+	echo 'pull';
 	exec('git pull');
 	break;
 
 	case 'create':
+	echo 'create';
 	break;
 
 	default:
@@ -80,5 +82,5 @@ switch (strtolower($_SERVER['HTTP_X_GITHUB_EVENT'])) {
 	echo "Event:$_SERVER[HTTP_X_GITHUB_EVENT] Payload:\n";
 		print_r($payload); # For debug only. Can be found in GitHub hook log.
 		die();
-}
-?>
+	}
+	?>
