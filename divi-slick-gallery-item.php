@@ -2,7 +2,7 @@
 class ET_Divi_Slick_Gallery_Item extends ET_Builder_Module {
 	function init() {
 		$this->name                        = esc_html__( 'Slide', 'et_builder' );
-		$this->slug                        = 'et_pb_slick_gallery_item_3';
+		$this->slug                        = 'et_pb_slick_gallery_item';
 		$this->fb_support                  = true;
 		$this->type                        = 'child';
 		$this->child_title_var             = 'admin_title';

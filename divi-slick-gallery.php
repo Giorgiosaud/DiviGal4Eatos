@@ -4,10 +4,10 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 	
 	function init() {
 				$this->name            = esc_html__( 'Slick Gallery', 'divi-slick' );
-		$this->slug            = 'et_pb_slick_carousel_3';
+		$this->slug            = 'et_pb_slick_carousel';
 		$this->fb_support      = true;
 		$this->fullwidth       = true;
-		$this->child_slug      = 'et_pb_slick_gallery_item_3';
+		$this->child_slug      = 'et_pb_slick_gallery_item';
 		$this->child_item_text = esc_html__( 'Slick Item', 'divi-slick' );
 
 		$this->whitelisted_fields = array(
@@ -51,19 +51,19 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$this->options_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'elements'   => esc_html__( 'Elements', 'et_builder' ),
-					'background' => esc_html__( 'Background', 'et_builder' ),
+					'elements'   => esc_html__( 'Elements', 'divi-slick' ),
+					'background' => esc_html__( 'Background', 'divi-slick' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'layout'    => esc_html__( 'Layout', 'et_builder' ),
+					'layout'    => esc_html__( 'Layout', 'divi-slick' ),
 				),
 			),
 			'custom_css' => array(
 				'toggles' => array(
 					'animation' => array(
-						'title'    => esc_html__( 'Animation', 'et_builder' ),
+						'title'    => esc_html__( 'Animation', 'divi-slick' ),
 						'priority' => 90,
 					),
 				),
@@ -73,7 +73,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$this->advanced_options = array(
 			'fonts' => array(
 				'header' => array(
-					'label'    => esc_html__( 'Header', 'et_builder' ),
+					'label'    => esc_html__( 'Header', 'divi-slick' ),
 					'css'      => array(
 						'main' => "{$this->main_css_element} .et_pb_slide_description .et_pb_slide_title",
 						'plugin_main' => "{$this->main_css_element} .et_pb_slide_description .et_pb_slide_title, {$this->main_css_element} .et_pb_slide_description .et_pb_slide_title a",
@@ -86,7 +86,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 					),
 				),
 				'body'   => array(
-					'label'    => esc_html__( 'Body', 'et_builder' ),
+					'label'    => esc_html__( 'Body', 'divi-slick' ),
 					'css'      => array(
 						'main'        => "{$this->main_css_element}.et_pb_module .et_pb_slides .et_pb_slide_content",
 						'line_height' => "{$this->main_css_element} p",
@@ -96,7 +96,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 			),
 			'button' => array(
 				'button' => array(
-					'label' => esc_html__( 'Button', 'et_builder' ),
+					'label' => esc_html__( 'Button', 'divi-slick' ),
 					'css' => array(
 						'plugin_main' => "{$this->main_css_element} .et_pb_more_button.et_pb_button",
 						'alignment' => "{$this->main_css_element} .et_pb_button_wrapper",
@@ -125,32 +125,32 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		);
 		$this->custom_css_options = array(
 			'slide_description' => array(
-				'label'    => esc_html__( 'Slide Description', 'et_builder' ),
+				'label'    => esc_html__( 'Slide Description', 'divi-slick' ),
 				'selector' => '.et_pb_slide_description',
 			),
 			'slide_title' => array(
-				'label'    => esc_html__( 'Slide Title', 'et_builder' ),
+				'label'    => esc_html__( 'Slide Title', 'divi-slick' ),
 				'selector' => '.et_pb_slide_description .et_pb_slide_title',
 			),
 			'slide_button' => array(
-				'label'    => esc_html__( 'Slide Button', 'et_builder' ),
+				'label'    => esc_html__( 'Slide Button', 'divi-slick' ),
 				'selector' => '.et_pb_slider .et_pb_slide .et_pb_slide_description a.et_pb_more_button.et_pb_button',
 				'no_space_before_selector' => true,
 			),
 			'slide_controllers' => array(
-				'label'    => esc_html__( 'Slide Controllers', 'et_builder' ),
+				'label'    => esc_html__( 'Slide Controllers', 'divi-slick' ),
 				'selector' => '.et-pb-controllers',
 			),
 			'slide_active_controller' => array(
-				'label'    => esc_html__( 'Slide Active Controller', 'et_builder' ),
+				'label'    => esc_html__( 'Slide Active Controller', 'divi-slick' ),
 				'selector' => '.et-pb-controllers .et-pb-active-control',
 			),
 			'slide_image' => array(
-				'label'    => esc_html__( 'Slide Image', 'et_builder' ),
+				'label'    => esc_html__( 'Slide Image', 'divi-slick' ),
 				'selector' => '.et_pb_slide_image',
 			),
 			'slide_arrows' => array(
-				'label'    => esc_html__( 'Slide Arrows', 'et_builder' ),
+				'label'    => esc_html__( 'Slide Arrows', 'divi-slick' ),
 				'selector' => '.et-pb-slider-arrows a',
 			),
 		);
@@ -159,93 +159,93 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 	function get_fields() {
 		$fields = array(
 			'show_arrows' => array(
-				'label'           => esc_html__( 'Show Arrows', 'et_builder' ),
+				'label'           => esc_html__( 'Show Arrows', 'divi-slick' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'et_builder' ),
-					'off' => esc_html__( 'No', 'et_builder' ),
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
 				'toggle_slug'     => 'elements',
-				'description'     => esc_html__( 'This setting allows you to turn the navigation arrows on or off.', 'et_builder' ),
+				'description'     => esc_html__( 'This setting allows you to turn the navigation arrows on or off.', 'divi-slick' ),
 			),
 			'show_pagination' => array(
-				'label'           => esc_html__( 'Show Controls', 'et_builder' ),
+				'label'           => esc_html__( 'Show Controls', 'divi-slick' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'et_builder' ),
-					'off' => esc_html__( 'No', 'et_builder' ),
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
 				'toggle_slug'     => 'elements',
-				'description'     => esc_html__( 'Disabling this option will remove the circle button at the bottom of the slider.', 'et_builder' ),
+				'description'     => esc_html__( 'Disabling this option will remove the circle button at the bottom of the slider.', 'divi-slick' ),
 			),
 			'show_inner_shadow' => array(
-				'label'           => esc_html__( 'Show Inner Shadow', 'et_builder' ),
+				'label'           => esc_html__( 'Show Inner Shadow', 'divi-slick' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'et_builder' ),
-					'off' => esc_html__( 'No', 'et_builder' ),
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'layout',
 			),
 			'show_content_on_mobile' => array(
-				'label'           => esc_html__( 'Show Content On Mobile', 'et_builder' ),
+				'label'           => esc_html__( 'Show Content On Mobile', 'divi-slick' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'layout',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'et_builder' ),
-					'off' => esc_html__( 'No', 'et_builder' ),
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
 				'tab_slug'        => 'custom_css',
 				'toggle_slug'     => 'visibility',
 			),
 			'show_cta_on_mobile' => array(
-				'label'           => esc_html__( 'Show CTA On Mobile', 'et_builder' ),
+				'label'           => esc_html__( 'Show CTA On Mobile', 'divi-slick' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'layout',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'et_builder' ),
-					'off' => esc_html__( 'No', 'et_builder' ),
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
 				'tab_slug'        => 'custom_css',
 				'toggle_slug'     => 'visibility',
 			),
 			'show_image_video_mobile' => array(
-				'label'            => esc_html__( 'Show Image / Video On Mobile', 'et_builder' ),
+				'label'            => esc_html__( 'Show Image / Video On Mobile', 'divi-slick' ),
 				'type'             => 'yes_no_button',
 				'option_category'  => 'layout',
 				'options'          => array(
-					'off' => esc_html__( 'No', 'et_builder' ),
-					'on'  => esc_html__( 'Yes', 'et_builder' ),
+					'off' => esc_html__( 'No', 'divi-slick' ),
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
 				),
 				'tab_slug'        => 'custom_css',
 				'toggle_slug'     => 'visibility',
 			),
 			'disabled_on' => array(
-				'label'           => esc_html__( 'Disable on', 'et_builder' ),
+				'label'           => esc_html__( 'Disable on', 'divi-slick' ),
 				'type'            => 'multiple_checkboxes',
 				'options'         => array(
-					'phone'   => esc_html__( 'Phone', 'et_builder' ),
-					'tablet'  => esc_html__( 'Tablet', 'et_builder' ),
-					'desktop' => esc_html__( 'Desktop', 'et_builder' ),
+					'phone'   => esc_html__( 'Phone', 'divi-slick' ),
+					'tablet'  => esc_html__( 'Tablet', 'divi-slick' ),
+					'desktop' => esc_html__( 'Desktop', 'divi-slick' ),
 				),
 				'additional_att'  => 'disable_on',
 				'option_category' => 'configuration',
-				'description'     => esc_html__( 'This will disable the module on selected devices', 'et_builder' ),
+				'description'     => esc_html__( 'This will disable the module on selected devices', 'divi-slick' ),
 				'tab_slug'        => 'custom_css',
 				'toggle_slug'     => 'visibility',
 			),
 			'admin_label' => array(
-				'label'       => esc_html__( 'Admin Label', 'et_builder' ),
+				'label'       => esc_html__( 'Admin Label', 'divi-slick' ),
 				'type'        => 'text',
-				'description' => esc_html__( 'This will change the label of the module in the builder for easy identification.', 'et_builder' ),
+				'description' => esc_html__( 'This will change the label of the module in the builder for easy identification.', 'divi-slick' ),
 				'toggle_slug' => 'admin_label',
 			),
 			'module_id' => array(
-				'label'           => esc_html__( 'CSS ID', 'et_builder' ),
+				'label'           => esc_html__( 'CSS ID', 'divi-slick' ),
 				'type'            => 'text',
 				'option_category' => 'configuration',
 				'tab_slug'        => 'custom_css',
@@ -253,7 +253,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'option_class'    => 'et_pb_custom_css_regular',
 			),
 			'module_class' => array(
-				'label'           => esc_html__( 'CSS Class', 'et_builder' ),
+				'label'           => esc_html__( 'CSS Class', 'divi-slick' ),
 				'type'            => 'text',
 				'option_category' => 'configuration',
 				'tab_slug'        => 'custom_css',
@@ -364,7 +364,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 			) );
 		}
 
-		$fullwidth = 'et_pb_slick_carousel_3' === $function_name ? 'on' : 'off';
+		$fullwidth = 'et_pb_slick_carousel' === $function_name ? 'on' : 'off';
 
 		$class  = '';
 		$class .= 'off' === $fullwidth ? ' et_pb_slider_fullwidth_off' : '';
