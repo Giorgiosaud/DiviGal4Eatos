@@ -42,7 +42,7 @@ class ET_Divi_Slick_Gallery_Item extends ET_Builder_Module {
 			'icon_font_size_phone',
 			'icon_font_size_last_edited',
 		);
-		$et_accent_color = et_builder_accent_color()
+		$et_accent_color = et_builder_accent_color();
 		$this->fields_defaults = array(
 			'url_new_window'      => array( 'off' ),
 			'use_icon'            => array( 'off' ),
