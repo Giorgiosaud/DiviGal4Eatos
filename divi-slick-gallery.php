@@ -169,6 +169,17 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'toggle_slug'     => 'elements',
 				'description'     => esc_html__( 'This setting allows you to turn the navigation arrows on or off.', 'divi-slick' ),
 			),
+			'auto' => array(
+				'label'           => esc_html__( 'Autoplay', 'divi-slick' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'options'         => array(
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+					'off' => esc_html__( 'No', 'divi-slick' ),
+				),
+				'toggle_slug'     => 'elements',
+				'description'     => esc_html__( 'This setting allows you to turn the auto slideon or off.', 'divi-slick' ),
+			),
 			'show_pagination' => array(
 				'label'           => esc_html__( 'Show Controls', 'divi-slick' ),
 				'type'            => 'yes_no_button',
@@ -260,6 +271,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'toggle_slug'     => 'classes',
 				'option_class'    => 'et_pb_custom_css_regular',
 			),
+
 		);
 
 		return $fields;
@@ -320,7 +332,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 	}
 
 	function shortcode_callback( $atts, $content = null, $function_name ) {
-		var_dump($this->shortcode_atts['auto']);
+
 		$module_id               = $this->shortcode_atts['module_id'];
 		$module_class            = $this->shortcode_atts['module_class'];
 		$show_arrows             = $this->shortcode_atts['show_arrows'];
