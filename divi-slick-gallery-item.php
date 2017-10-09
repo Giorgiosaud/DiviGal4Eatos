@@ -465,51 +465,6 @@ class ET_Divi_Slick_Gallery_Item extends ET_Builder_Module {
 return $fields;
 }
 
-// function maybe_inherit_values() {
-// 		// Inheriting slider attribute
-// 	global $et_pb_slider;
-
-// 		// Attribute inheritance should be done on front-end / published page only.
-// 		// Don't run attribute inheritance in VB and Backend to avoid attribute inheritance accidentally being saved on VB / BB
-// 	if ( ! empty( $et_pb_slider ) && ! is_admin() && ! et_fb_is_enabled() ) {
-// 		foreach ( $et_pb_slider as $slider_attr => $slider_attr_value ) {
-// 				// Get default value
-// 			$default = isset( $this->fields_unprocessed[ $slider_attr ][ 'default' ] ) ? $this->fields_unprocessed[ $slider_attr ][ 'default' ] : '';
-
-// 			if ( isset( $this->fields_defaults[ $slider_attr ] ) && isset( $this->fields_defaults[ $slider_attr ][0] ) ) {
-// 				$default = $this->fields_defaults[ $slider_attr ][0];
-// 			}
-
-// 				// Slide item isn't empty nor default
-// 			if ( ! in_array( $this->shortcode_atts[ $slider_attr ], array( '', $default ) ) ) {
-// 				continue;
-// 			}
-
-// 				// Slider value is equal to empty or slide item's default
-// 			if ( in_array( $slider_attr_value, array( '', $default ) ) ) {
-// 				continue;
-// 			}
-
-// 				// Overwrite slider item's empty / default value
-// 			$this->shortcode_atts[ $slider_attr ] = $slider_attr_value;
-// 		}
-// 	}
-// }
-
-// function get_fb_saved_attrs( $atts = array() ) {
-// 	$saved_attrs             = new stdClass();
-// 	$background_fields_names = $this->get_background_fields_names();
-
-// 	if ( ! empty( $atts ) ) {
-// 		foreach ( $atts as $atts_key => $atts_value ) {
-// 			if ( in_array( $atts_key, $background_fields_names ) && '' !== $atts_value ) {
-// 				$saved_attrs->{ $atts_key } = $atts_value;
-// 			}
-// 		}
-// 	}
-
-// 	return $saved_attrs;
-// }
 
 function shortcode_callback( $atts, $content = null, $function_name ) {
 	$module_id             = $this->shortcode_atts['module_id'];
