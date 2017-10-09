@@ -12,6 +12,8 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 
 		$this->whitelisted_fields = array(
 			'allow_accessibility',
+			'adaptiveHeight',
+			'auto_play',
 			'show_pagination',
 			'auto',
 			'auto_speed',
@@ -181,6 +183,25 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'toggle_slug'     => 'elements',
 				'description'     => esc_html__( 'Enables adaptive height for single slide horizontal carousels.', 'divi-slick' ),
 			),
+			'auto_play' => array(
+				'label'           => esc_html__( 'Auto Play', 'divi-slick' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'options'         => array(
+					'off' => esc_html__( 'No', 'divi-slick' ),
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+				),
+				'toggle_slug'     => 'elements',
+				'description'     => esc_html__( 'Enables Autoplay', 'divi-slick' ),
+			),
+			'auto_speed' => array(
+				'label'           => esc_html__( 'Auto Play Speed', 'et_builder' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'value_type'      => 'float',
+				'description'     => esc_html__( "Define a number for the speed in miliscnds", 'et_builder' ),
+				'toggle_slug'     => 'auto_play',
+			),
 			'auto' => array(
 				'label'           => esc_html__( 'Autoplay', 'divi-slick' ),
 				'type'            => 'yes_no_button',
@@ -203,14 +224,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'toggle_slug'     => 'elements',
 				'description'     => esc_html__( 'This setting allows you to turn the auto slideon or off.', 'divi-slick' ),
 			),
-			'auto_speed' => array(
-				'label'           => esc_html__( 'Speed', 'et_builder' ),
-				'type'            => 'text',
-				'option_category' => 'basic_option',
-				'value_type'      => 'float',
-				'description'     => esc_html__( "Define a number for the speed in miliscnds", 'et_builder' ),
-				'toggle_slug'     => 'auto',
-			),
+			
 			'show_pagination' => array(
 				'label'           => esc_html__( 'Show Controls', 'divi-slick' ),
 				'type'            => 'yes_no_button',
