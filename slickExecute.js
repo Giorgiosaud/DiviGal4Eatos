@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
 	$('.et_pb_slick_gallery').slick({
-		accessibility:true,
-        adaptiveHeight:false,
+		accessibility:$(this).data('accessibility'),
+        adaptiveHeight:$(this).data('accessibility'),
         autoplay: true,
         autoplaySpeed: 0,
         arrows:true,

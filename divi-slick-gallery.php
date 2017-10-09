@@ -443,6 +443,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$module_class            = $this->shortcode_atts['module_class'];
 		$allow_accessibility             = $this->shortcode_atts['allow_accessibility'];
 		$adaptiveHeight             = $this->shortcode_atts['adaptiveHeight'];
+		$autoPlay             = $this->shortcode_atts['auto_play'];
 		$show_pagination         = $this->shortcode_atts['show_pagination'];
 		$parallax                = $this->shortcode_atts['parallax'];
 		$parallax_method         = $this->shortcode_atts['parallax_method'];
@@ -494,9 +495,11 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$class .= 'on' !== $show_inner_shadow ? ' et_pb_slider_no_shadow' : '';
 		$class .= 'on' === $show_image_video_mobile ? ' et_pb_slider_show_image' : '';
 		$accesibility='on'===$allow_accessibility?true:false;
+		$adaptiveHeight='on'===$adaptiveHeight?true:false;
+		$autoPlay='on'===$autoPlay?true:false;
 		$output = sprintf(
 			'<div%3$s class="et_pb_module et_pb_slick_gallery_container%1$s%4$s">
-				<div class="et_pb_slick_gallery" data-accessibility="%5$s">
+				<div class="et_pb_slick_gallery" data-accessibility="%5$s" data-adaptiveHeight="%6$s" data-autoPlay="%7$s">
 					%2$s
 				</div> <!-- .et_pb_slick_gallery -->
 			</div> <!-- .et_pb_slick_gallery_container -->
@@ -505,7 +508,8 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 			$content,
 			( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
 			( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' ),
-			$accesibility
+			$accesibility,
+			$adaptiveHeight
 		);
 
 		// Reset passed slider item value
