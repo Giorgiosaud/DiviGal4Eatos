@@ -603,19 +603,19 @@ function shortcode_callback( $atts, $content = null, $function_name ) {
 	$class = " et_pb_module et_pb_bg_layout_{$background_layout}{$this->get_text_orientation_classname()}";
 
 	$output = sprintf(
-		'<div%5$s class="et_pb_blurb%4$s%6$s%7$s%8$s%10$s">
+		'<div%5$s class="et_pb_slick_item%4$s%6$s%7$s%8$s%10$s">
 		%11$s
 		%9$s
-		<div class="et_pb_blurb_content">
+		<div class="et_pb_slick_item_content">
 		%2$s
-		<div class="et_pb_blurb_container">
+		<div class="et_pb_slick_item_container">
 		%3$s
-		<div class="et_pb_blurb_description">
+		<div class="et_pb_slick_item_description">
 		%1$s
-		</div><!-- .et_pb_blurb_description -->
+		</div><!-- .et_pb_slick_item_description -->
 		</div>
-		</div> <!-- .et_pb_blurb_content -->
-		</div> <!-- .et_pb_blurb -->',
+		</div> <!-- .et_pb_slick_item_content -->
+		</div> <!-- .et_pb_slick_item -->',
 		$this->shortcode_content,
 		$image,
 		$title,
