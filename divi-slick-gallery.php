@@ -175,8 +175,8 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'on'  => esc_html__( 'Yes', 'divi-slick' ),
 					'off' => esc_html__( 'No', 'divi-slick' ),
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
 				),
 				'toggle_slug'     => 'elements',
 				'description'     => esc_html__( 'Enables adaptive height for single slide horizontal carousels.', 'divi-slick' ),
