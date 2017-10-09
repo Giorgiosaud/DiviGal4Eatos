@@ -269,7 +269,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'toggle_slug'     => 'visibility',
 			),
 			'admin_label' => array(
-				'label'       => esc_html__( 'Admin Label2', 'divi-slick' ),
+				'label'       => esc_html__( 'Nombre a Mostrar', 'divi-slick' ),
 				'type'        => 'text',
 				'description' => esc_html__( 'This will change the label of the module in the builder for easy identification.', 'divi-slick' ),
 				'toggle_slug' => 'admin_label',
