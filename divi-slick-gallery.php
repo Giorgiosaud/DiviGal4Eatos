@@ -191,6 +191,9 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 					'off' => esc_html__( 'No', 'divi-slick' ),
 					'on'  => esc_html__( 'Yes', 'divi-slick' ),
 				),
+				'affects'         => array(
+					'auto_speed',
+				),
 				'toggle_slug'     => 'setup',
 				'description'     => esc_html__( 'Enables Autoplay', 'divi-slick' ),
 			),
@@ -201,6 +204,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'value_type'      => 'float',
 				'description'     => esc_html__( "Define a number for the speed in miliscnds", 'et_builder' ),
 				'toggle_slug'     => 'setup',
+				'depends_default'     => true,
 			),
 			'auto' => array(
 				'label'           => esc_html__( 'Autoplay', 'divi-slick' ),
