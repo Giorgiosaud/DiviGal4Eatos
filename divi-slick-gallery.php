@@ -499,7 +499,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$autoPlay='on'===$autoPlay?true:false;
 		$output = sprintf(
 			'<div%3$s class="et_pb_module et_pb_slick_gallery_container%1$s%4$s">
-				<div class="et_pb_slick_gallery" data-accessibility="%5$s" data-adaptiveHeight="%6$s" data-autoPlay="%7$s">
+				<div class="et_pb_slick_gallery" data-accessibility="%5$s" data-adaptiveHeight="%6$s" data-autoplay="%7$s">
 					%2$s
 				</div> <!-- .et_pb_slick_gallery -->
 			</div> <!-- .et_pb_slick_gallery_container -->
