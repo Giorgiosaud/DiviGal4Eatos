@@ -31,6 +31,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 
 		$this->fields_defaults = array(
 			'allow_accessibility'             => array( 'on' ),
+			'adaptiveHeight'             => array( 'off' ),
 			'show_pagination'         => array( 'on' ),
 			'auto'                    => array( 'off' ),
 			'auto_speed'              => array( '7000' ),
@@ -159,6 +160,17 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 	function get_fields() {
 		$fields = array(
 			'allow_accessibility' => array(
+				'label'           => esc_html__( 'Use Tabs and Arrows', 'divi-slick' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'options'         => array(
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+					'off' => esc_html__( 'No', 'divi-slick' ),
+				),
+				'toggle_slug'     => 'elements',
+				'description'     => esc_html__( 'This setting Allow Movements With Tab And Arrow Keys.', 'divi-slick' ),
+			),
+			'adaptiveHeight' => array(
 				'label'           => esc_html__( 'Use Tabs and Arrows', 'divi-slick' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
@@ -355,6 +367,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$module_id               = $this->shortcode_atts['module_id'];
 		$module_class            = $this->shortcode_atts['module_class'];
 		$allow_accessibility             = $this->shortcode_atts['allow_accessibility'];
+		$adaptiveHeight             = $this->shortcode_atts['adaptiveHeight'];
 		$show_pagination         = $this->shortcode_atts['show_pagination'];
 		$parallax                = $this->shortcode_atts['parallax'];
 		$parallax_method         = $this->shortcode_atts['parallax_method'];
