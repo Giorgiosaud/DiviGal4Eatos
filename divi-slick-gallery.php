@@ -487,21 +487,20 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$fullwidth = 'et_pb_slick_carousel' === $function_name ? 'on' : 'off';
 
 		$class  = '';
-		$class .= 'off' === $fullwidth ? ' et_pb_slider_fullwidth_off' : '';
-		$class .= 'off' === $allow_accessibility ? ' et_pb_slider_no_arrows' : '';
-		$class .= 'off' === $show_pagination ? ' et_pb_slider_no_pagination' : '';
-		$class .= 'on' === $parallax ? ' et_pb_slider_parallax' : '';
+		$class .= 'off' === $fullwidth ? ' et_pb_slick_carousel_fullwidth_off' : '';
+		$class .= 'off' === $allow_accessibility ? ' et_pb_slick_carousel_no_arrows' : '';
+		$class .= 'off' === $show_pagination ? ' et_pb_slick_carousel_no_pagination' : '';
 		$class .= 'on' === $auto ? ' et_slider_auto et_slider_speed_' . esc_attr( $auto_speed ) : '';
 		$class .= 'on' === $auto_ignore_hover ? ' et_slider_auto_ignore_hover' : '';
 		$class .= 'on' !== $show_inner_shadow ? ' et_pb_slider_no_shadow' : '';
 		$class .= 'on' === $show_image_video_mobile ? ' et_pb_slider_show_image' : '';
 
 		$output = sprintf(
-			'<div%3$s class="et_pb_module et_pb_slick_gallery%1$s%4$s">
-				<div class="et_pb_slick_gallery">
+			'<div%3$s class="et_pb_module et_pb_slick_carousel%1$s%4$s">
+				<div class="et_pb_slick_carousel">
 					%2$s
-				</div> <!-- .et_pb_slick_gallery -->
-			</div> <!-- .et_pb_slider -->',
+				</div> <!-- .et_pb_slick_carousel -->
+			</div> <!-- .et_pb_slick_carousel -->',
 			$class,
 			$content,
 			( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
