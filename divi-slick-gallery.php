@@ -14,6 +14,9 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 			'allow_accessibility',
 			'adaptiveHeight',
 			'auto_play',
+			'use_arrows',
+			'prev_arrow',
+			'next_arrow',
 			'show_pagination',
 			'auto',
 			'auto_speed',
@@ -34,6 +37,10 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$this->fields_defaults = array(
 			'allow_accessibility'             => array( 'on' ),
 			'adaptiveHeight'             => array( 'off' ),
+			'use_arrows'             => array( 'on' ),
+			'prev_arrow'=>array('<button type="button" class="slick-prev">Previous</button>')
+			'next_arrow'=>array('<button type="button" class="slick-next">Next</button>'),
+			'center_mode'         => array( 'off' ),
 			'show_pagination'         => array( 'on' ),
 			'auto'                    => array( 'off' ),
 			'auto_speed'              => array( '7000' ),
@@ -201,11 +208,57 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'label'           => esc_html__( 'Auto Play Speed', 'et_builder' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'default'         => '7000',
+				'default'         => '3000',
 				'value_type'      => 'float',
 				'description'     => esc_html__( "Define a number for the speed in miliscnds", 'et_builder' ),
 				'toggle_slug'     => 'setup',
 				'depends_default'     => true,
+			),
+			'use_arrows' => array(
+				'label'           => esc_html__( 'Arrows', 'divi-slick' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'options'         => array(
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+					'off' => esc_html__( 'No', 'divi-slick' ),
+				),
+				'affects'         => array(
+					'prev_arrow',
+					'next_arrow'
+				),
+				'toggle_slug'     => 'setup',
+				'description'     => esc_html__( 'Enables Arrows', 'divi-slick' ),
+			),
+			'prev_arrow' => array(
+				'label'           => esc_html__( 'Prev Arrow Html', 'et_builder' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'default'         => '<button type="button" class="slick-prev">Previous</button>',
+				'value_type'      => 'text',
+				'description'     => esc_html__( "Define the Prev Arrow Html", 'et_builder' ),
+				'toggle_slug'     => 'setup',
+				'depends_default'     => true,
+			),
+			'next_arrow' => array(
+				'label'           => esc_html__( 'Next Arrow Html', 'et_builder' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'default'         => '<button type="button" class="slick-next">Next</button>',
+				'value_type'      => 'text',
+				'description'     => esc_html__( "Define a Html for Next Arrow", 'et_builder' ),
+				'toggle_slug'     => 'setup',
+				'depends_default'     => true,
+			),
+			'center_mode' => array(
+				'label'           => esc_html__( 'Center', 'divi-slick' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'options'         => array(
+					'off' => esc_html__( 'No', 'divi-slick' ),
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+				),
+				'toggle_slug'     => 'setup',
+				'description'     => esc_html__( 'Enables Center Mode', 'divi-slick' ),
 			),
 			'auto' => array(
 				'label'           => esc_html__( 'Autoplay', 'divi-slick' ),
@@ -441,15 +494,13 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$class .= 'on' === $show_image_video_mobile ? ' et_pb_slider_show_image' : '';
 
 		$output = sprintf(
-			'<div%4$s class="et_pb_module et_pb_slider%1$s%3$s%5$s">
-				<div class="et_pb_slides">
+			'<div%3$s class="et_pb_module et_pb_slick_gallery%1$s%4$s">
+				<div class="et_pb_slick_gallery">
 					%2$s
-				</div> <!-- .et_pb_slides -->
-			</div> <!-- .et_pb_slider -->
-			',
+				</div> <!-- .et_pb_slick_gallery -->
+			</div> <!-- .et_pb_slider -->',
 			$class,
 			$content,
-			( $et_pb_slider_has_video ? ' et_pb_preload' : '' ),
 			( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
 			( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' )
 		);
