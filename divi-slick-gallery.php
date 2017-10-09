@@ -436,6 +436,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 
 	function shortcode_callback( $atts, $content = null, $function_name ) {
 		  wp_enqueue_script( 'slickjs', plugin_dir_url( __FILE__ ).'Slick/slick.js' );
+		  wp_enqueue_script( 'slickexecjs', plugin_dir_url( __FILE__ ).'slickExecute.js',array('slickjs') );
 		  wp_enqueue_style( 'slickcss', plugin_dir_url( __FILE__ ).'Slick/slick.css' );
 		  wp_enqueue_style( 'slickthemecss', plugin_dir_url( __FILE__ ).'Slick/slick-theme.css' );
 
