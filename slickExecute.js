@@ -1,9 +1,9 @@
 jQuery(document).ready(function($){
 
 	$('.et_pb_slick_gallery').slick({
-		accessibility:true,
-        adaptiveHeight:false,
-        autoplay: true,
+		accessibility:$(this).data('accesibility'),
+        adaptiveHeight:$(this).data('adaptiveheight'),
+        autoplay: $(this).data('autoplay'),
         autoplaySpeed: 0,
         arrows:true,
         prevArrow:'<button type="button" class="slick-prev">Previous</button>',

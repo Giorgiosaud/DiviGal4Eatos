@@ -3,7 +3,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 
 	
 	function init() {
-				$this->name            = esc_html__( 'Slick Gallery', 'divi-slick' );
+		$this->name            = esc_html__( 'Slick Gallery', 'divi-slick' );
 		$this->slug            = 'et_pb_slick_carousel';
 		$this->fb_support      = true;
 		$this->fullwidth       = true;
@@ -11,7 +11,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$this->child_item_text = esc_html__( 'Slick Item', 'divi-slick' );
 
 		$this->whitelisted_fields = array(
-			'allow_accessibility',
+			'allow_accesibility',
 			'adaptiveHeight',
 			'auto_play',
 			'use_arrows',
@@ -35,7 +35,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		);
 
 		$this->fields_defaults = array(
-			'allow_accessibility'             => array( 'on' ),
+			'allow_accesibility'             => array( 'on' ),
 			'adaptiveHeight'             => array( 'off' ),
 			'use_arrows'             => array( 'on' ),
 			'prev_arrow'=>array('<button type="button" class="slick-prev">Previous</button>'),
@@ -168,7 +168,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 
 	function get_fields() {
 		$fields = array(
-			'allow_accessibility' => array(
+			'allow_accesibility' => array(
 				'label'           => esc_html__( 'Use Tabs and Arrows', 'divi-slick' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
@@ -377,148 +377,147 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 
 		);
 
-		return $fields;
-	}
+return $fields;
+}
 
-	function pre_shortcode_content() {
-		global $et_pb_slider_has_video, $et_pb_slider_parallax, $et_pb_slider_parallax_method, $et_pb_slider_show_mobile, $et_pb_slider_custom_icon, $et_pb_slider_item_num, $et_pb_slider_button_rel;
+function pre_shortcode_content() {
+	global $et_pb_slider_has_video, $et_pb_slider_parallax, $et_pb_slider_parallax_method, $et_pb_slider_show_mobile, $et_pb_slider_custom_icon, $et_pb_slider_item_num, $et_pb_slider_button_rel;
 
-		$et_pb_slider_item_num = 0;
+	$et_pb_slider_item_num = 0;
 
-		$parallax        = $this->shortcode_atts['parallax'];
-		$parallax_method = $this->shortcode_atts['parallax_method'];
-		$show_content_on_mobile  = $this->shortcode_atts['show_content_on_mobile'];
-		$show_cta_on_mobile      = $this->shortcode_atts['show_cta_on_mobile'];
-		$button_rel              = $this->shortcode_atts['button_rel'];
-		$button_custom           = $this->shortcode_atts['custom_button'];
-		$custom_icon             = $this->shortcode_atts['button_icon'];
+	$parallax        = $this->shortcode_atts['parallax'];
+	$parallax_method = $this->shortcode_atts['parallax_method'];
+	$show_content_on_mobile  = $this->shortcode_atts['show_content_on_mobile'];
+	$show_cta_on_mobile      = $this->shortcode_atts['show_cta_on_mobile'];
+	$button_rel              = $this->shortcode_atts['button_rel'];
+	$button_custom           = $this->shortcode_atts['custom_button'];
+	$custom_icon             = $this->shortcode_atts['button_icon'];
 
-		$et_pb_slider_has_video = false;
+	$et_pb_slider_has_video = false;
 
-		$et_pb_slider_parallax = $parallax;
+	$et_pb_slider_parallax = $parallax;
 
-		$et_pb_slider_parallax_method = $parallax_method;
+	$et_pb_slider_parallax_method = $parallax_method;
 
-		$et_pb_slider_show_mobile = array(
-			'show_content_on_mobile'  => $show_content_on_mobile,
-			'show_cta_on_mobile'      => $show_cta_on_mobile,
-		);
+	$et_pb_slider_show_mobile = array(
+		'show_content_on_mobile'  => $show_content_on_mobile,
+		'show_cta_on_mobile'      => $show_cta_on_mobile,
+	);
 
-		$et_pb_slider_custom_icon = 'on' === $button_custom ? $custom_icon : '';
-		$et_pb_slider_button_rel  = $button_rel;
+	$et_pb_slider_custom_icon = 'on' === $button_custom ? $custom_icon : '';
+	$et_pb_slider_button_rel  = $button_rel;
 
 		// Pass Fullwidth Slider Module settings to Slide Item
-		global $et_pb_slider;
+	global $et_pb_slider;
 
-		$et_pb_slider = array(
-			'background_color'                           => $this->shortcode_atts['background_color'],
-			'use_background_color_gradient'              => $this->shortcode_atts['use_background_color_gradient'],
-			'background_color_gradient_type'             => $this->shortcode_atts['background_color_gradient_type'],
-			'background_color_gradient_direction'        => $this->shortcode_atts['background_color_gradient_direction'],
-			'background_color_gradient_direction_radial' => $this->shortcode_atts['background_color_gradient_direction_radial'],
-			'background_color_gradient_start'            => $this->shortcode_atts['background_color_gradient_start'],
-			'background_color_gradient_end'              => $this->shortcode_atts['background_color_gradient_end'],
-			'background_color_gradient_start_position'   => $this->shortcode_atts['background_color_gradient_start_position'],
-			'background_color_gradient_end_position'     => $this->shortcode_atts['background_color_gradient_end_position'],
-			'background_image'                           => $this->shortcode_atts['background_image'],
-			'background_size'                            => $this->shortcode_atts['background_size'],
-			'background_position'                        => $this->shortcode_atts['background_position'],
-			'background_repeat'                          => $this->shortcode_atts['background_repeat'],
-			'background_blend'                           => $this->shortcode_atts['background_blend'],
-			'parallax'                                   => $this->shortcode_atts['parallax'],
-			'parallax_method'                            => $this->shortcode_atts['parallax_method'],
-			'background_video_mp4'                       => $this->shortcode_atts['background_video_mp4'],
-			'background_video_webm'                      => $this->shortcode_atts['background_video_webm'],
-			'background_video_width'                     => $this->shortcode_atts['background_video_width'],
-			'background_video_height'                    => $this->shortcode_atts['background_video_height'],
-		);
+	$et_pb_slider = array(
+		'background_color'                           => $this->shortcode_atts['background_color'],
+		'use_background_color_gradient'              => $this->shortcode_atts['use_background_color_gradient'],
+		'background_color_gradient_type'             => $this->shortcode_atts['background_color_gradient_type'],
+		'background_color_gradient_direction'        => $this->shortcode_atts['background_color_gradient_direction'],
+		'background_color_gradient_direction_radial' => $this->shortcode_atts['background_color_gradient_direction_radial'],
+		'background_color_gradient_start'            => $this->shortcode_atts['background_color_gradient_start'],
+		'background_color_gradient_end'              => $this->shortcode_atts['background_color_gradient_end'],
+		'background_color_gradient_start_position'   => $this->shortcode_atts['background_color_gradient_start_position'],
+		'background_color_gradient_end_position'     => $this->shortcode_atts['background_color_gradient_end_position'],
+		'background_image'                           => $this->shortcode_atts['background_image'],
+		'background_size'                            => $this->shortcode_atts['background_size'],
+		'background_position'                        => $this->shortcode_atts['background_position'],
+		'background_repeat'                          => $this->shortcode_atts['background_repeat'],
+		'background_blend'                           => $this->shortcode_atts['background_blend'],
+		'parallax'                                   => $this->shortcode_atts['parallax'],
+		'parallax_method'                            => $this->shortcode_atts['parallax_method'],
+		'background_video_mp4'                       => $this->shortcode_atts['background_video_mp4'],
+		'background_video_webm'                      => $this->shortcode_atts['background_video_webm'],
+		'background_video_width'                     => $this->shortcode_atts['background_video_width'],
+		'background_video_height'                    => $this->shortcode_atts['background_video_height'],
+	);
+}
+
+function shortcode_callback( $atts, $content = null, $function_name ) {
+	wp_enqueue_script( 'slickjs', plugin_dir_url( __FILE__ ).'Slick/slick.js' );
+	wp_enqueue_script( 'slickexecjs', plugin_dir_url( __FILE__ ).'slickExecute.js',array('slickjs') );
+	wp_enqueue_style( 'slickcss', plugin_dir_url( __FILE__ ).'Slick/slick.css' );
+	wp_enqueue_style( 'slickthemecss', plugin_dir_url( __FILE__ ).'Slick/slick-theme.css' );
+
+	$module_id               = $this->shortcode_atts['module_id'];
+	$module_class            = $this->shortcode_atts['module_class'];
+	$allow_accesibility             = $this->shortcode_atts['allow_accessibility'];
+	$adaptiveHeight             = $this->shortcode_atts['adaptiveHeight'];
+	$autoPlay             = $this->shortcode_atts['auto_play'];
+	$show_pagination         = $this->shortcode_atts['show_pagination'];
+	$parallax                = $this->shortcode_atts['parallax'];
+	$parallax_method         = $this->shortcode_atts['parallax_method'];
+	$auto                    = $this->shortcode_atts['auto'];
+	$auto_speed              = $this->shortcode_atts['auto_speed'];
+	$auto_ignore_hover       = $this->shortcode_atts['auto_ignore_hover'];
+	$show_inner_shadow       = $this->shortcode_atts['show_inner_shadow'];
+	$show_image_video_mobile = $this->shortcode_atts['show_image_video_mobile'];
+	$background_position     = $this->shortcode_atts['background_position'];
+	$background_size         = $this->shortcode_atts['background_size'];
+
+	global $et_pb_slider_has_video, $et_pb_slider_parallax, $et_pb_slider_parallax_method, $et_pb_slider_show_mobile, $et_pb_slider_custom_icon, $et_pb_slider;
+
+	$content = $this->shortcode_content;
+
+	$module_class              = ET_Builder_Element::add_module_order_class( $module_class, $function_name );
+
+	if ( '' !== $background_position && 'default' !== $background_position && 'off' === $parallax ) {
+		$processed_position = str_replace( '_', ' ', $background_position );
+
+		ET_Builder_Module::set_style( $function_name, array(
+			'selector'    => '%%order_class%% .et_pb_slide',
+			'declaration' => sprintf(
+				'background-position: %1$s;',
+				esc_html( $processed_position )
+			),
+		) );
 	}
 
-	function shortcode_callback( $atts, $content = null, $function_name ) {
-		  wp_enqueue_script( 'slickjs', plugin_dir_url( __FILE__ ).'Slick/slick.js' );
-		  wp_enqueue_script( 'slickexecjs', plugin_dir_url( __FILE__ ).'slickExecute.js',array('slickjs') );
-		  wp_enqueue_style( 'slickcss', plugin_dir_url( __FILE__ ).'Slick/slick.css' );
-		  wp_enqueue_style( 'slickthemecss', plugin_dir_url( __FILE__ ).'Slick/slick-theme.css' );
+	if ( '' !== $background_size && 'default' !== $background_size && 'off' === $parallax ) {
+		ET_Builder_Module::set_style( $function_name, array(
+			'selector'    => '%%order_class%% .et_pb_slide',
+			'declaration' => sprintf(
+				'-moz-background-size: %1$s;
+				-webkit-background-size: %1$s;
+				background-size: %1$s;',
+				esc_html( $background_size )
+			),
+		) );
+	}
 
-		$module_id               = $this->shortcode_atts['module_id'];
-		$module_class            = $this->shortcode_atts['module_class'];
-		$allow_accessibility             = $this->shortcode_atts['allow_accessibility'];
-		$adaptiveHeight             = $this->shortcode_atts['adaptiveHeight'];
-		$autoPlay             = $this->shortcode_atts['auto_play'];
-		$show_pagination         = $this->shortcode_atts['show_pagination'];
-		$parallax                = $this->shortcode_atts['parallax'];
-		$parallax_method         = $this->shortcode_atts['parallax_method'];
-		$auto                    = $this->shortcode_atts['auto'];
-		$auto_speed              = $this->shortcode_atts['auto_speed'];
-		$auto_ignore_hover       = $this->shortcode_atts['auto_ignore_hover'];
-		$show_inner_shadow       = $this->shortcode_atts['show_inner_shadow'];
-		$show_image_video_mobile = $this->shortcode_atts['show_image_video_mobile'];
-		$background_position     = $this->shortcode_atts['background_position'];
-		$background_size         = $this->shortcode_atts['background_size'];
+	$fullwidth = 'et_pb_slick_carousel' === $function_name ? 'on' : 'off';
 
-		global $et_pb_slider_has_video, $et_pb_slider_parallax, $et_pb_slider_parallax_method, $et_pb_slider_show_mobile, $et_pb_slider_custom_icon, $et_pb_slider;
-
-		$content = $this->shortcode_content;
-
-		$module_class              = ET_Builder_Element::add_module_order_class( $module_class, $function_name );
-
-		if ( '' !== $background_position && 'default' !== $background_position && 'off' === $parallax ) {
-			$processed_position = str_replace( '_', ' ', $background_position );
-
-			ET_Builder_Module::set_style( $function_name, array(
-				'selector'    => '%%order_class%% .et_pb_slide',
-				'declaration' => sprintf(
-					'background-position: %1$s;',
-					esc_html( $processed_position )
-				),
-			) );
-		}
-
-		if ( '' !== $background_size && 'default' !== $background_size && 'off' === $parallax ) {
-			ET_Builder_Module::set_style( $function_name, array(
-				'selector'    => '%%order_class%% .et_pb_slide',
-				'declaration' => sprintf(
-					'-moz-background-size: %1$s;
-					-webkit-background-size: %1$s;
-					background-size: %1$s;',
-					esc_html( $background_size )
-				),
-			) );
-		}
-
-		$fullwidth = 'et_pb_slick_carousel' === $function_name ? 'on' : 'off';
-
-		$class  = '';
-		$class .= 'off' === $fullwidth ? ' et_pb_slick_carousel_fullwidth_off' : '';
-		$class .= 'off' === $allow_accessibility ? ' et_pb_slick_carousel_no_arrows' : '';
-		$class .= 'on' === $auto ? ' et_slider_auto et_slider_speed_' . esc_attr( $auto_speed ) : '';
-		$class .= 'on' === $auto_ignore_hover ? ' et_slider_auto_ignore_hover' : '';
-		$class .= 'on' !== $show_inner_shadow ? ' et_pb_slider_no_shadow' : '';
-		$class .= 'on' === $show_image_video_mobile ? ' et_pb_slider_show_image' : '';
-		$accesibility='on'===$allow_accessibility?true:false;
-		$adaptiveHeight='on'===$adaptiveHeight?true:false;
-		$autoPlay='on'===$autoPlay?true:false;
-		$output = sprintf(
-			'<div%3$s class="et_pb_module et_pb_slick_gallery_container%1$s%4$s">
-				<div class="et_pb_slick_gallery" data-accessibility="%5$s" data-adaptiveHeight="%6$s" data-autoplay="%7$s">
-					%2$s
-				</div> <!-- .et_pb_slick_gallery -->
-			</div> <!-- .et_pb_slick_gallery_container -->
-			',
-			$class,
-			$content,
-			( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
-			( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' ),
-			$accesibility,
-			$adaptiveHeight,
-			$autoPlay
-		);
+	$class  = '';
+	$class .= 'off' === $fullwidth ? ' et_pb_slick_carousel_fullwidth_off' : '';
+	$class .= 'on' === $auto ? ' et_slider_auto et_slider_speed_' . esc_attr( $auto_speed ) : '';
+	$class .= 'on' === $auto_ignore_hover ? ' et_slider_auto_ignore_hover' : '';
+	$class .= 'on' !== $show_inner_shadow ? ' et_pb_slider_no_shadow' : '';
+	$class .= 'on' === $show_image_video_mobile ? ' et_pb_slider_show_image' : '';
+	$accesibility='on'===$allow_accesibility?true:false;
+	$adaptiveHeight='on'===$adaptiveHeight?true:false;
+	$autoPlay='on'===$autoPlay?true:false;
+	$output = sprintf(
+		'<div%3$s class="et_pb_module et_pb_slick_gallery_container%1$s%4$s">
+		<div class="et_pb_slick_gallery" data-accesibility="%5$s" data-adaptiveheight="%6$s" data-autoplay="%7$s">
+		%2$s
+		</div> <!-- .et_pb_slick_gallery -->
+		</div> <!-- .et_pb_slick_gallery_container -->
+		',
+		$class,
+		$content,
+		( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
+		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' ),
+		$accesibility,
+		$adaptiveHeight,
+		$autoPlay
+	);
 
 		// Reset passed slider item value
-		$et_pb_slider = array();
+	$et_pb_slider = array();
 
-		return $output;
-	}
+	return $output;
+}
 
 
 }
