@@ -38,7 +38,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 			'allow_accessibility'             => array( 'on' ),
 			'adaptiveHeight'             => array( 'off' ),
 			'use_arrows'             => array( 'on' ),
-			'prev_arrow'=>array('<button type="button" class="slick-prev">Previous</button>')
+			'prev_arrow'=>array('<button type="button" class="slick-prev">Previous</button>'),
 			'next_arrow'=>array('<button type="button" class="slick-next">Next</button>'),
 			'center_mode'         => array( 'off' ),
 			'show_pagination'         => array( 'on' ),
