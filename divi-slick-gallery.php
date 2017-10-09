@@ -445,6 +445,7 @@ function shortcode_callback( $atts, $content = null, $function_name ) {
 	$allow_accesibility             = $this->shortcode_atts['allow_accessibility'];
 	$adaptiveHeight             = $this->shortcode_atts['adaptiveHeight'];
 	$autoPlay             = $this->shortcode_atts['auto_play'];
+	$autoPlay             = $this->shortcode_atts['auto_play'];
 	$show_pagination         = $this->shortcode_atts['show_pagination'];
 	$parallax                = $this->shortcode_atts['parallax'];
 	$parallax_method         = $this->shortcode_atts['parallax_method'];
@@ -499,7 +500,7 @@ function shortcode_callback( $atts, $content = null, $function_name ) {
 	$autoPlay='on'===$autoPlay?true:false;
 	$output = sprintf(
 		'<div%3$s class="et_pb_module et_pb_slick_gallery_container%1$s%4$s">
-		<div class="et_pb_slick_gallery" data-accesibility="%5$s" data-adaptiveheight="%6$s" data-autoplay="%7$s">
+		<div class="et_pb_slick_gallery" data-accesibility="%5$s" data-adaptiveheight="%6$s" data-autoplay="%7$s" data-autospeed="%8$s">
 		%2$s
 		</div> <!-- .et_pb_slick_gallery -->
 		</div> <!-- .et_pb_slick_gallery_container -->
@@ -510,7 +511,8 @@ function shortcode_callback( $atts, $content = null, $function_name ) {
 		( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' ),
 		$accesibility,
 		$adaptiveHeight,
-		$autoPlay
+		$autoPlay,
+		$auto_speed
 	);
 
 		// Reset passed slider item value
