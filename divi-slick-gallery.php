@@ -320,6 +320,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 	}
 
 	function shortcode_callback( $atts, $content = null, $function_name ) {
+		var_dump($this->shortcode_atts);
 		$module_id               = $this->shortcode_atts['module_id'];
 		$module_class            = $this->shortcode_atts['module_class'];
 		$show_arrows             = $this->shortcode_atts['show_arrows'];
