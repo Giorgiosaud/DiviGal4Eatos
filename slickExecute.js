@@ -1,4 +1,4 @@
-jQuery(document).ready(function(){
+jQuery(document).ready(function($){
 
 	$('.et_pb_slick_gallery').slick({
 		accessibility:true,
