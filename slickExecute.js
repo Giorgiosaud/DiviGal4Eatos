@@ -1,34 +1,35 @@
 jQuery(document).ready(function($){
 
-	$('.et_pb_slick_gallery').slick({
-		accessibility:$(this).data('accesibility'),
-        adaptiveHeight:$(this).data('adaptiveheight'),
-        autoplay: $(this).data('autoplay'),
-        autoplaySpeed: 0,
-        arrows:true,
-        prevArrow:'<button type="button" class="slick-prev">Previous</button>',
-    	nextArrow:'<button type="button" class="slick-next">Next</button>',
-        centerMode:true,
-        centerPadding:'0px',
-        cssEase:'linear',
-        dots: false,
-        dotsClass:'slick-dots',
-        draggable:true,
-        fade:false,
-        easing:'linear',
-        infinite: true,
-		speed: 5000,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		pauseOnHover:true,
-		responsive: [
+	$('.et_pb_slick_gallery').each(function(index){
+		$(this).slick({
+			accessibility:$(this).data('accesibility'),
+			adaptiveHeight:$(this).data('adaptiveheight'),
+			autoplay: $(this).data('autoplay'),
+			autoplaySpeed: 0,
+			arrows:true,
+			prevArrow:'<button type="button" class="slick-prev">Previous</button>',
+			nextArrow:'<button type="button" class="slick-next">Next</button>',
+			centerMode:true,
+			centerPadding:'0px',
+			cssEase:'linear',
+			dots: false,
+			dotsClass:'slick-dots',
+			draggable:true,
+			fade:false,
+			easing:'linear',
+			infinite: true,
+			speed: 5000,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			pauseOnHover:true,
+			responsive: [
 			{
 				breakpoint: 1024,
 				settings: {
 					slidesToShow: 3,
 					slidesToScroll: 1,
 				}
-				},
+			},
 			{
 				breakpoint: 600,
 				settings: {
@@ -47,6 +48,6 @@ jQuery(document).ready(function($){
 			// settings: "unslick"
 			// instead of a settings object
 			]
+		});
 	});
-	});
-	
+});
