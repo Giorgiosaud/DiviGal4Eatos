@@ -180,6 +180,25 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'toggle_slug'     => 'elements',
 				'description'     => esc_html__( 'This setting allows you to turn the auto slideon or off.', 'divi-slick' ),
 			),
+			'auto_ignore_hover' => array(
+				'label'           => esc_html__( 'Autoplay', 'divi-slick' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'configuration',
+				'options'         => array(
+					'on'  => esc_html__( 'Yes', 'divi-slick' ),
+					'off' => esc_html__( 'No', 'divi-slick' ),
+				),
+				'toggle_slug'     => 'elements',
+				'description'     => esc_html__( 'This setting allows you to turn the auto slideon or off.', 'divi-slick' ),
+			),
+			'auto_speed' => array(
+				'label'           => esc_html__( 'Speed', 'et_builder' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'value_type'      => 'float',
+				'description'     => esc_html__( "Define a number for the speed in miliscnds", 'et_builder' ),
+				'toggle_slug'     => 'auto',
+			),
 			'show_pagination' => array(
 				'label'           => esc_html__( 'Show Controls', 'divi-slick' ),
 				'type'            => 'yes_no_button',
