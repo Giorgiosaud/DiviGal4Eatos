@@ -442,7 +442,7 @@ function shortcode_callback( $atts, $content = null, $function_name ) {
 
 	$module_id               = $this->shortcode_atts['module_id'];
 	$module_class            = $this->shortcode_atts['module_class'];
-	$allow_accesibility             = $this->shortcode_atts['allow_accessibility'];
+	$allow_accesibility             = $this->shortcode_atts['allow_accesibility'];
 	$adaptiveHeight             = $this->shortcode_atts['adaptiveHeight'];
 	$autoPlay             = $this->shortcode_atts['auto_play'];
 	$autoPlay             = $this->shortcode_atts['auto_play'];
