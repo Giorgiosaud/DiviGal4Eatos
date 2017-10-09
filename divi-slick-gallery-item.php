@@ -474,7 +474,7 @@ function shortcode_callback( $atts, $content = null, $function_name ) {
 	$url_new_window        = $this->shortcode_atts['url_new_window'];
 	$alt                   = $this->shortcode_atts['alt'];
 	$background_layout     = $this->shortcode_atts['background_layout'];
-	$animation             = $this->shortcode_atts['animation'];
+	// $animation             = $this->shortcode_atts['animation'];
 	$icon_placement        = $this->shortcode_atts['icon_placement'];
 	$font_icon             = $this->shortcode_atts['font_icon'];
 	$use_icon              = $this->shortcode_atts['use_icon'];
@@ -552,7 +552,6 @@ function shortcode_callback( $atts, $content = null, $function_name ) {
 		$title = "<h4>{$title}</h4>";
 	}
 
-		// Added for backward compatibility
 	if ( empty( $animation ) ) {
 		$animation = 'top';
 	}
