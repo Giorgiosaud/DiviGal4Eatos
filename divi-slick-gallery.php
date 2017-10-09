@@ -509,7 +509,8 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 			( '' !== $module_id ? sprintf( ' id="%1$s"', esc_attr( $module_id ) ) : '' ),
 			( '' !== $module_class ? sprintf( ' %1$s', esc_attr( $module_class ) ) : '' ),
 			$accesibility,
-			$adaptiveHeight
+			$adaptiveHeight,
+			$autoPlay
 		);
 
 		// Reset passed slider item value
