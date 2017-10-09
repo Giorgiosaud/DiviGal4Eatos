@@ -201,6 +201,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'label'           => esc_html__( 'Auto Play Speed', 'et_builder' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
+				'default'         => '7000',
 				'value_type'      => 'float',
 				'description'     => esc_html__( "Define a number for the speed in miliscnds", 'et_builder' ),
 				'toggle_slug'     => 'setup',
