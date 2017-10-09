@@ -171,7 +171,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 				'description'     => esc_html__( 'This setting Allow Movements With Tab And Arrow Keys.', 'divi-slick' ),
 			),
 			'adaptiveHeight' => array(
-				'label'           => esc_html__( 'Use Tabs and Arrows', 'divi-slick' ),
+				'label'           => esc_html__( 'Adapt the Height', 'divi-slick' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -179,7 +179,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
 				'toggle_slug'     => 'elements',
-				'description'     => esc_html__( 'This setting Allow Movements With Tab And Arrow Keys.', 'divi-slick' ),
+				'description'     => esc_html__( 'Enables adaptive height for single slide horizontal carousels.', 'divi-slick' ),
 			),
 			'auto' => array(
 				'label'           => esc_html__( 'Autoplay', 'divi-slick' ),
