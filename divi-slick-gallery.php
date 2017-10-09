@@ -54,7 +54,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$this->options_toggles = array(
 			'general'  => array(
 				'toggles' => array(
-					'elements'   => esc_html__( 'Elements', 'divi-slick' ),
+					'setup'   => esc_html__( 'Setup', 'divi-slick' ),
 					'background' => esc_html__( 'Background', 'divi-slick' ),
 				),
 			),
@@ -169,7 +169,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 					'on'  => esc_html__( 'Yes', 'divi-slick' ),
 					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
-				'toggle_slug'     => 'elements',
+				'toggle_slug'     => 'setup',
 				'description'     => esc_html__( 'This setting Allow Movements With Tab And Arrow Keys.', 'divi-slick' ),
 			),
 			'adaptiveHeight' => array(
@@ -180,7 +180,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 					'off' => esc_html__( 'No', 'divi-slick' ),
 					'on'  => esc_html__( 'Yes', 'divi-slick' ),
 				),
-				'toggle_slug'     => 'elements',
+				'toggle_slug'     => 'setup',
 				'description'     => esc_html__( 'Enables adaptive height for single slide horizontal carousels.', 'divi-slick' ),
 			),
 			'auto_play' => array(
@@ -191,7 +191,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 					'off' => esc_html__( 'No', 'divi-slick' ),
 					'on'  => esc_html__( 'Yes', 'divi-slick' ),
 				),
-				'toggle_slug'     => 'elements',
+				'toggle_slug'     => 'setup',
 				'description'     => esc_html__( 'Enables Autoplay', 'divi-slick' ),
 			),
 			'auto_speed' => array(
@@ -210,7 +210,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 					'on'  => esc_html__( 'Yes', 'divi-slick' ),
 					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
-				'toggle_slug'     => 'elements',
+				'toggle_slug'     => 'setup',
 				'description'     => esc_html__( 'This setting allows you to turn the auto slideon or off.', 'divi-slick' ),
 			),
 			'auto_ignore_hover' => array(
@@ -221,7 +221,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 					'on'  => esc_html__( 'Yes', 'divi-slick' ),
 					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
-				'toggle_slug'     => 'elements',
+				'toggle_slug'     => 'setup',
 				'description'     => esc_html__( 'This setting allows you to turn the auto slideon or off.', 'divi-slick' ),
 			),
 			
@@ -233,7 +233,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 					'on'  => esc_html__( 'Yes', 'divi-slick' ),
 					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
-				'toggle_slug'     => 'elements',
+				'toggle_slug'     => 'setup',
 				'description'     => esc_html__( 'Disabling this option will remove the circle button at the bottom of the slider.', 'divi-slick' ),
 			),
 			'show_inner_shadow' => array(
