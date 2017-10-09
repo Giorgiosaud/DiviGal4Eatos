@@ -11,7 +11,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		$this->child_item_text = esc_html__( 'Slick Item', 'divi-slick' );
 
 		$this->whitelisted_fields = array(
-			'show_arrows',
+			'allow_accessibility',
 			'show_pagination',
 			'auto',
 			'auto_speed',
@@ -30,7 +30,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 		);
 
 		$this->fields_defaults = array(
-			'show_arrows'             => array( 'on' ),
+			'allow_accessibility'             => array( 'on' ),
 			'show_pagination'         => array( 'on' ),
 			'auto'                    => array( 'off' ),
 			'auto_speed'              => array( '7000' ),
@@ -158,8 +158,8 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 
 	function get_fields() {
 		$fields = array(
-			'show_arrows' => array(
-				'label'           => esc_html__( 'Show Arrows', 'divi-slick' ),
+			'allow_accessibility' => array(
+				'label'           => esc_html__( 'Use Tabs and Arrows', 'divi-slick' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'configuration',
 				'options'         => array(
@@ -167,7 +167,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 					'off' => esc_html__( 'No', 'divi-slick' ),
 				),
 				'toggle_slug'     => 'elements',
-				'description'     => esc_html__( 'This setting allows you to turn the navigation arrows on or off.', 'divi-slick' ),
+				'description'     => esc_html__( 'This setting Allow Movements With Tab And Arrow Keys.', 'divi-slick' ),
 			),
 			'auto' => array(
 				'label'           => esc_html__( 'Autoplay', 'divi-slick' ),
@@ -354,7 +354,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 
 		$module_id               = $this->shortcode_atts['module_id'];
 		$module_class            = $this->shortcode_atts['module_class'];
-		$show_arrows             = $this->shortcode_atts['show_arrows'];
+		$allow_accessibility             = $this->shortcode_atts['allow_accessibility'];
 		$show_pagination         = $this->shortcode_atts['show_pagination'];
 		$parallax                = $this->shortcode_atts['parallax'];
 		$parallax_method         = $this->shortcode_atts['parallax_method'];
@@ -400,7 +400,7 @@ class ET_Divi_Slick_Gallery extends ET_Builder_Module {
 
 		$class  = '';
 		$class .= 'off' === $fullwidth ? ' et_pb_slider_fullwidth_off' : '';
-		$class .= 'off' === $show_arrows ? ' et_pb_slider_no_arrows' : '';
+		$class .= 'off' === $allow_accessibility ? ' et_pb_slider_no_arrows' : '';
 		$class .= 'off' === $show_pagination ? ' et_pb_slider_no_pagination' : '';
 		$class .= 'on' === $parallax ? ' et_pb_slider_parallax' : '';
 		$class .= 'on' === $auto ? ' et_slider_auto et_slider_speed_' . esc_attr( $auto_speed ) : '';
