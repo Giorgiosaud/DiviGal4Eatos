@@ -7,7 +7,6 @@ class ET_Divi_Slick_Gallery_Item extends ET_Builder_Module {
 		$this->type                        = 'child';
 		$this->child_title_var             = 'admin_title';
 		$this->child_title_fallback_var    = 'title';
-
 		$this->whitelisted_fields = array(
 			'title',
 			'url',
@@ -60,7 +59,7 @@ class ET_Divi_Slick_Gallery_Item extends ET_Builder_Module {
 
 		$this->advanced_setting_title_text = esc_html__( 'New Item', 'et_builder' );
 		$this->settings_text               = esc_html__( 'Item Settings', 'et_builder' );
-		$this->main_css_element = '%%order_class%%';
+		$this->main_css_element = '%%order_class%%.et_pb_blurb';
 		$this->options_toggles = array(
 			'general'  => array(
 				'toggles' => array(
